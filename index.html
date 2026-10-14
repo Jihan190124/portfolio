@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="JIHAN_OS — interactive personal terminal, projects, services, certifications and skills.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>JIHAN_OS // ACCESS TERMINAL</title>
+<style>
+:root{color-scheme:dark;--bg:#070a12;--panel:rgba(9,15,29,.96);--fg:#8df7ff;--bright:#e2fdff;--muted:#679ba8;--accent:#a78bfa;--green:#7dffb3;--line:rgba(104,224,255,.27);--glow:0 0 12px rgba(70,224,255,.19),0 0 34px rgba(121,91,255,.10)}
+*{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100vh;color:var(--fg);background:radial-gradient(ellipse at 50% 0%,rgba(39,87,151,.2),transparent 58%),linear-gradient(180deg,#080c17,#05070d);font:14px/1.62 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;text-shadow:0 0 8px rgba(83,219,255,.12)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;background:repeating-linear-gradient(to bottom,transparent 0,rgba(255,255,255,.014) 1px,transparent 2px,transparent 4px)}
+.wrap{width:min(1020px,calc(100% - 24px));margin:auto;padding:22px 0 30px}.topbar,.footer{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;letter-spacing:.08em}.status{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}.screen{margin-top:12px;border:1px solid var(--line);background:var(--panel);box-shadow:var(--glow),0 18px 70px #0008;border-radius:10px;overflow:hidden;transition:filter .35s ease}.screen.booting{box-shadow:0 0 24px rgba(70,224,255,.12),0 18px 70px #0008}.chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#ffffff05;border-bottom:1px solid var(--line)}.chrome span{width:9px;height:9px;border:1px solid var(--muted);border-radius:50%}.window-title{margin-left:auto;color:var(--muted);font-size:10px;letter-spacing:.13em}.terminal{padding:clamp(15px,4vw,32px);min-height:620px}.ascii{font-size:clamp(8px,1.2vw,12px)}#boot{min-height:220px}#boot .line{font-size:clamp(14px,2.8vw,25px);line-height:1.55;margin:0 0 12px;letter-spacing:.02em}#boot .ascii{font-size:clamp(7px,1.25vw,12px);margin-bottom:28px}.screen.booting .terminal{min-height:calc(100svh - 100px);display:flex;flex-direction:column;justify-content:center}.screen.booting #boot{width:100%;max-width:900px;margin:0 auto}.screen.booting .ascii{text-align:center}.screen.booting #boot .line{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto}.screen.booting #boot .line.dim:first-of-type{font-size:clamp(18px,3.5vw,32px);color:var(--fg)}.screen:not(.booting) #boot{display:none}.ascii{white-space:pre;overflow:hidden;font-size:clamp(7px,1.35vw,12px);line-height:1.22;color:var(--bright);margin:0 0 15px}.line{margin:0 0 6px;white-space:pre-wrap;overflow-wrap:anywhere}.command-line{color:var(--bright);margin-top:8px}.command-line .cmd-prompt{color:var(--accent)}#output{overflow:visible;min-height:0}.prompt-line{position:relative;display:flex;align-items:baseline;gap:8px;margin-top:12px;padding-bottom:2px}.dim{color:var(--muted)}.bright{color:var(--bright)}.accent{color:var(--accent)}.success{color:var(--green)}.warn{color:#ffd479}.rule{height:1px;background:var(--line);margin:15px 0}.prompt-line{display:flex;align-items:baseline;gap:8px;margin-top:10px}.prompt{color:var(--bright);white-space:nowrap}#command{min-width:0;flex:1;color:var(--bright);background:transparent;border:0;outline:0;font:inherit;caret-color:var(--bright);text-shadow:inherit}#command::placeholder{color:#466e7d}.quick,.toolbar{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}button,select{cursor:pointer;border:1px solid var(--line);border-radius:4px;background:#65dfff09;color:var(--fg);padding:7px 10px;font:inherit;font-size:11px}button:hover,button:focus-visible,select:focus-visible{background:#65dfff1b;outline:1px solid var(--accent)}.hint{color:#527d89;font-size:11px;margin-top:12px}.footer{margin-top:11px;font-size:10px}.badge{display:inline-block;border:1px solid var(--line);padding:1px 6px;border-radius:3px;color:var(--accent);font-size:10px}.bar{height:5px;background:#182338;border-radius:5px;overflow:hidden;margin:4px 0 10px}.bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--fg),var(--accent));box-shadow:0 0 8px var(--fg)}.panel{border:1px solid var(--line);padding:10px 12px;border-radius:5px;margin:9px 0;background:#ffffff03}.matrix{color:var(--green)}.hidden{display:none}@media(max-width:560px){.wrap{width:calc(100% - 12px);padding-top:10px}.topbar{font-size:9px;letter-spacing:.02em}.terminal{padding:14px 11px;min-height:680px}.footer{align-items:flex-start;flex-direction:column;gap:2px}.ascii{font-size:7px}#output{min-height:310px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="wrap container-fluid px-2 px-md-3">
+ <div class="topbar"><div>JIHAN_OS <span class="dim">// INTERACTIVE ACCESS PORTAL</span></div><div class="status"><span class="dot"></span><span id="status">SESSION ONLINE</span></div></div>
+ <section class="screen booting" aria-label="Interactive terminal">
+  <div class="chrome"><span></span><span></span><span></span><div class="window-title">TTY://JIHAN.ME</div></div>
+  <div class="terminal">
+<div id="boot" aria-live="polite"></div><div class="rule"></div>
+   <div id="output" aria-live="polite">
+    <form id="terminal-form" class="prompt-line" autocomplete="off"><label class="prompt" for="command">visitor@jihan:~$</label><input id="command" name="command" type="text" spellcheck="false" autocapitalize="off" placeholder="type help and press Enter" aria-label="Terminal command" disabled></form>
+   </div>
+   <div class="quick"><button data-cmd="help">help</button><button data-cmd="about">about</button><button data-cmd="projects">projects</button><button data-cmd="skills">skills</button><button data-cmd="contact">contact</button><button data-cmd="neofetch">neofetch</button><button data-cmd="theme">theme</button><button data-cmd="clear">clear</button></div>
+   <div class="toolbar"><button id="soundBtn" type="button">sound: off</button><button id="glitchBtn" type="button">glitch: off</button><button id="downloadBtn" type="button">download profile</button><select id="themeSelect" aria-label="Choose terminal color theme"><option value="cyber">Cyber blue</option><option value="amber">Retro amber</option><option value="matrix">Matrix green</option><option value="violet">Violet neon</option></select></div>
+   <div class="hint">Each command and its output stays in the transcript · ↑ / ↓ history · Tab autocomplete · type <span class="bright">help</span></div>
+  </div>
+ </section>
+ <div class="footer"><span>JIHAN_OS v3.0 // PORTFOLIO + BOOTSTRAP</span><span>SIMULATED TERMINAL · NO REAL SHELL ACCESS</span></div>
+</main>
+<script>
+const PROFILE={
+ name:"Jihan Bhagat",
+ tagline:"Full Stack Developer · IoT Engineer · Automation",
+ location:"Ahmedabad, Gujarat, India",
+ about:["I'm a developer and ethical hacker passionate about practical, innovative solutions.","I work across web development, mobile apps, IoT systems, AI and automation.","Projects include ESP32 devices, Firebase-integrated apps, AI chatbots and educational security demos."],
+ email:"YOUR_EMAIL@example.com", github:"https://github.com/YOUR_GITHUB_USERNAME", portfolio:"https://jihanbhagat.in",
+ services:[
+ ["Web Development","Modern, responsive web applications."],["Mobile Apps","Cross-platform mobile applications."],["IoT & Automation","Smart IoT solutions and home automation."],["AI & Chatbots","AI solutions and conversational chatbots."],["Cyber Security","Educational security demonstrations."],["Designing","Logo design, presentations, social graphics, branding kits and marketing layouts."],["Startup Launch Package","Website, domain, hosting, launch, logo, branding and pitch-ready presentations."]
+ ],
+ projects:[
+ ["Smart Irrigation System","Soil moisture sensors and automated watering dashboard","ESP32 · Firebase · React","Arduino/ESP32"],
+ ["WiFi Automatic Irrigation","Remote-controlled irrigation with mobile app","ESP32 · WiFi · Mobile App","Arduino/ESP32"],
+ ["Bluetooth Controlled Car","Arduino car controlled over Bluetooth","Arduino · Bluetooth · Mobile Control","Arduino/ESP32"],
+ ["IoT Weather Station","Weather monitoring with OpenWeatherMap","ESP32 · OpenWeatherMap · Sensors","Arduino/ESP32"],
+ ["Smart Home Automation","Wi-Fi control for lights, fans and appliances","ESP32 · Relay · Mobile App","Arduino/ESP32"],
+ ["RFID Door Lock System","RFID card-based access control","Arduino · RFID · Security","Arduino/ESP32"],
+ ["ESP32 Camera Surveillance","Wi-Fi live-streaming camera system","ESP32-CAM · Streaming · Security","Arduino/ESP32"],
+ ["Voice Controlled Home Devices","Appliances controlled by Google Assistant or Alexa","ESP32 · IoT · Voice Assistant","Arduino/ESP32"],
+ ["Air Quality Monitoring","PM2.5, CO2 and temperature cloud dashboard","ESP32 · MQ Sensors · Firebase","Arduino/ESP32"],
+ ["ESP32 Drone Controller","Wireless drone controller","ESP32 · RC · Drone","Arduino/ESP32"],
+ ["Gesture Controlled Robot","Robot controlled by hand gestures","Arduino · Accelerometer · Robotics","Arduino/ESP32"],
+ ["LoRa Communication System","Long-range ESP32 communication","ESP32 · LoRa · IoT","Arduino/ESP32"],
+ ["Health Monitoring Band","Wearable heart-rate and temperature tracker","ESP32 · Pulse Sensor","Arduino/ESP32"],
+ ["ESP32 Smart Glasses","Smart glasses with OLED display","ESP32 · OLED · Wearable","Arduino/ESP32"],
+ ["Home Energy Monitor","Real-time energy tracking","Arduino · ESP32 · IoT","Arduino/ESP32"],
+ ["Door Security System","Camera-based face detection","Raspberry Pi · OpenCV","Raspberry Pi"],
+ ["Human Tracking System","Real-time person tracking","Raspberry Pi · Computer Vision · Python","Raspberry Pi"],
+ ["AI Object Detection Camera","Object recognition camera","Raspberry Pi · TensorFlow · OpenCV","Raspberry Pi"],
+ ["Smart Mirror","Mirror with weather, calendar and news","Raspberry Pi · Display · APIs","Raspberry Pi"],
+ ["Home Automation Hub","IoT appliance control hub","Raspberry Pi · MQTT · IoT","Raspberry Pi"],
+ ["Weather Station","Sensor-based weather dashboard","Raspberry Pi · Sensors · Cloud","Raspberry Pi"],
+ ["Smart Garden","Automated plant watering","Raspberry Pi · Soil Sensor · IoT","Raspberry Pi"],
+ ["Retro Gaming Console","Classic console with emulators","Raspberry Pi · RetroPie","Raspberry Pi"],
+ ["Media Server","Local media streaming server","Raspberry Pi · Plex · Kodi","Raspberry Pi"],
+ ["Line Following Robot","Robot follows a path using IR sensors","Raspberry Pi · Robotics · Python","Raspberry Pi"],
+ ["Drone Control System","Pi-powered drone with camera","Raspberry Pi · Drone · Computer Vision","Raspberry Pi"],
+ ["Pi-hole Ad Blocker","LAN-wide ad blocking","Raspberry Pi · DNS · Networking","Raspberry Pi"],
+ ["Network Intrusion Detector","Monitors packets for suspicious activity","Raspberry Pi · Wireshark · Security","Raspberry Pi"],
+ ["Chatbot with NLP","Natural language chatbot","Python · NLTK · Machine Learning","Software"],
+ ["Expense Tracker","Finance tracking and reports","Python · SQLite · Matplotlib","Software"],
+ ["Web Scraper","Scrapes data into a database","Python · BeautifulSoup · Automation","Software"],
+ ["ATM Simulation","PIN validation and balance updates","C · File Handling","Software"],
+ ["Hospital Management System","Patient, doctor and appointment management","C · Data Structures · Database","Software"],
+ ["Online Quiz System","Timed MCQ quiz and scoring","C++ · OOP · File Handling","Software"],
+ ["Inventory Management","Stock and purchase tracking","C++ · OOP · File System","Software"],
+ ["Maze Solver","DFS/BFS pathfinder","C++ · Algorithms · Graph Theory","Software"],
+ ["Student Grading System","Course, grade and GPA management","Java · OOP · Swing","Software"],
+ ["Banking Application","Account and transaction application","Java · OOP · MySQL","Software"],
+ ["Mini C Compiler","Lexing and parsing for a subset of C","C · C++ · Compiler Design","Software"]
+ ],
+ certifications:[
+ ["NPTEL · IIT Madras (Oct 2026)","Introduction to Operating System"],
+ ["NPTEL · IIT Kharagpur (May 2026)","Computer Networks and Internet Protocol"],
+ ["CDAC India (May 2026)","Certificate in Python and AI"],
+ ["Cisco Networking Academy (Apr 2026)","Cisco Networking Basics"],
+ ["Cyber Security","EC-Council Android Bug Bounty Hunting: Hunt Like a Rat"],
+ ["Cyber Security","EC-Council Introduction to Dark Web, Anonymity & Cryptocurrency"],
+ ["Cyber Security","EC-Council Introduction to SAN and NAS Storage"],
+ ["Cyber Security","EC-Council Make In-house Hacking & Pentesting Lab"],
+ ["Microsoft 365 Copilot","Excel with Copilot: AI-Driven Data Analysis (2025)"],
+ ["Microsoft 365 Copilot","Outlook Copilot: Maximize Workday Efficiency (2025)"],
+ ["Microsoft 365 Copilot","Teams Copilot: AI-Powered Collaboration (2024)"],
+ ["Microsoft 365 Copilot","Learning Microsoft 365 Copilot (2024)"],
+ ["C-DAC PACE (2024)","Advanced Diploma in Multilingual Programming"],
+ ["C-DAC PACE (2024)","Programming: Java, C, C++, HTML, CSS, JavaScript"],
+ ["C-DAC PACE (2024)","Office: Word, Excel, PowerPoint, Advanced Office Suite"]
+ ],
+ skills:[["Linux & command line",82],["Networking fundamentals",72],["Cybersecurity learning labs",66],["HTML / CSS / JavaScript",78],["ESP32 & Arduino",80],["Raspberry Pi",77],["Python & automation",72],["IoT & Firebase",76]]
+};
+const $=s=>document.querySelector(s), output=$("#output"),boot=$("#boot"),input=$("#command"),form=$("#terminal-form");
+const history=[], themes={
+ cyber:["#070a12","#080c17","#8df7ff","#e2fdff","#679ba8","#a78bfa","#7dffb3","rgba(104,224,255,.27)"],
+ amber:["#090805","#100c06","#ffbd55","#ffd98a","#9c8056","#ff8a3d","#b5ff8a","rgba(255,189,85,.25)"],
+ matrix:["#030a06","#06120a","#63ff91","#d5ffe0","#5d9e70","#c3ff52","#63ff91","rgba(99,255,145,.25)"],
+ violet:["#090611","#10091b","#d8a8ff","#f3e4ff","#9b7db8","#70d7ff","#a8ffdf","rgba(216,168,255,.25)"]
+};
+let historyIndex=0, sound=false, glitch=false, matrixTimer=null;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function line(text="",cls=""){const el=document.createElement("div");el.className="line"+(cls?" "+cls:"");el.textContent=text;output.insertBefore(el,form);window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})}
+function block(title,items){line(title,"bright");items.forEach(x=>line("  "+x))}
+function help(){block("COMMAND INDEX",[
+"about        — personal profile","projects     — selected builds","skills       — skills with visual meters","contact      — profile links","help         — command list","clear        — clear output",
+"whoami       — current visitor identity","neofetch     — system-style profile card","ls           — list virtual files","cat <file>   — read about.txt / projects.txt / skills.txt",
+"date         — local date and time","uptime       — session uptime","history      — recent commands","echo <text>  — print text",
+"banner       — redraw logo","theme [name] — cyber / amber / matrix / violet","matrix       — toggle falling-code effect","joke         — random terminal joke","sudo         — definitely not a real shell 😈",
+"download     — download a profile text file","contact      — display contact placeholders"
+]);line("Autocomplete works with Tab. Try `neofetch` or `cat projects.txt`.","dim")}
+function about(){block("USER PROFILE",[
+PROFILE.name,PROFILE.tagline,"Location: "+PROFILE.location,"",
+"I like building things and learning how software, networks and hardware work.",
+"This terminal is a creative front door to my projects and experiments."
+])}
+function projects(filter="all"){const k=String(filter).toLowerCase();const list=PROFILE.projects.filter(p=>k==="all"||(k==="esp32"&&p[3]==="Arduino/ESP32")||(k==="pi"&&p[3]==="Raspberry Pi")||(k==="software"&&p[3]==="Software"));line("PROJECTS // "+list.length+" RESULTS","bright");list.forEach(p=>{line("["+p[3].toUpperCase()+"] "+p[0],"accent");line("    "+p[1],"dim");line("    stack: "+p[2],"dim")});if(!list.length)line("No results. Try projects all, projects esp32, projects pi or projects software.","warn")}
+function services(){line("SERVICES","bright");PROFILE.services.forEach(s=>{line("["+s[0]+"]","accent");line("  "+s[1],"dim")})}
+function certifications(){line("CERTIFICATIONS & COURSES","bright");PROFILE.certifications.forEach(c=>line("["+c[0]+"] "+c[1],"accent"))}
+function skills(){line("SKILLS & INTERESTS","bright");PROFILE.skills.forEach(([s,n])=>{line(s+"  "+n+"%","dim");const el=document.createElement("div");el.className="bar";const span=document.createElement("span");span.style.width=n+"%";el.append(span);output.append(el)});line("These are illustrative self-assessment meters, not verified qualifications.","dim")}
+function contact(){block("CONTACT ROUTES",["Email: "+PROFILE.email,"GitHub: "+PROFILE.github,"Portfolio: "+PROFILE.portfolio,"Edit the PROFILE object in index.html to replace placeholders."])}
+function neofetch(){line("       .---.        "+PROFILE.name,"accent");line("      /     \\       JIHAN_OS v2.0");line("      | ()  |       OS: Browser-based terminal");line("       \\___/        Shell: simulated-js");line("                      Theme: "+$("#themeSelect").value);line("                      Uptime: "+Math.floor((Date.now()-started)/1000)+"s");line("                      Projects: "+PROFILE.projects.length);line("                      Skills: "+PROFILE.skills.length)}
+function virtualFile(name){const f=name.toLowerCase();if(f==="about.txt")about();else if(f==="projects.txt")projects();else if(f==="skills.txt")skills();else if(f==="contact.txt")contact();else line("cat: "+name+": file not found. Try: about.txt, projects.txt, skills.txt, contact.txt","warn")}
+const jokes=["There are 10 kinds of people: those who understand binary and those who don't.","It works on my machine. Have you tried turning the universe off and on again?","sudo make me a sandwich — permission denied: bread not found.","A packet walks into a bar. The bartender says: 'We don't serve your type.'"];
+const started=Date.now();let sessionCommands=0;
+function run(raw){const value=raw.trim();if(!value)return;sessionCommands++;
+const cmdLine=document.createElement("div");cmdLine.className="line command-line";
+const cmdPrompt=document.createElement("span");cmdPrompt.className="cmd-prompt";cmdPrompt.textContent="visitor@jihan:~$ ";
+const cmdText=document.createElement("span");cmdText.textContent=value;cmdLine.append(cmdPrompt,cmdText);output.insertBefore(cmdLine,form);
+const [cmd,...args]=value.split(/\s+/),c=cmd.toLowerCase();
+switch(c){
+case"help":help();break;case"about":about();break;case"projects":projects(args[0]||"all");break;case"skills":skills();break;case"contact":contact();break;case"services":services();break;case"certifications":certifications();break;case"clear":output.querySelectorAll(".line,.bar").forEach(el=>el.remove());line("Terminal cleared.","dim");break;
+case"whoami":line("visitor — welcome to JIHAN_OS.","success");break;
+case"neofetch":neofetch();break;
+case"ls":block("VIRTUAL FILE SYSTEM",["about.txt","projects.txt","skills.txt","contact.txt","/projects/","/lab/"]);break;
+case"cat":if(args.length)virtualFile(args.join(" "));else line("usage: cat <file>","warn");break;
+case"date":line(new Date().toString());break;
+case"uptime":line("Terminal session uptime: "+Math.floor((Date.now()-started)/1000)+" seconds.");break;
+case"history":history.slice(-12).forEach((x,i)=>line(String(Math.max(1,history.length-12+i+1)).padStart(3," ")+"  "+x));break;
+case"echo":line(args.join(" "));break;
+case"banner":line("     ██╗██╗██╗  ██╗ █████╗ ███╗   ██╗","bright");line("     ██║██║██║  ██║██╔══██╗████╗  ██║","bright");line("     ██║██║███████║███████║██╔██╗ ██║","bright");line("██   ██║██║██╔══██║██╔══██║██║╚██╗██║","bright");break;
+case"theme":if(args[0])setTheme(args[0]);else line("Current theme: "+$("#themeSelect").value+". Use theme cyber|amber|matrix|violet.","dim");break;
+case"matrix":toggleMatrix();break;
+case"joke":line(jokes[Math.floor(Math.random()*jokes.length)],"success");break;
+case"download":downloadProfile();break;case"open":if(args.join(" ").toLowerCase()==="portfolio"){window.open("https://jihanbhagat.in/","_blank","noopener");line("Opening jihanbhagat.in in a new tab.","success")}else line("Usage: open portfolio","warn");break;
+case"sudo":line("Permission denied: this is a static website, not a real shell. 😈","warn");break;
+case"exit":line("You can check out any time you like, but this terminal stays online.","dim");break;
+case"ping":line("Simulated ping: pong ✓ (no network request was sent)","success");break;
+case"scan":line("SAFE DEMO ONLY: simulated scan complete. No devices or networks were contacted.","success");line("localhost [SIMULATED] · 22/tcp ssh · 80/tcp http · 443/tcp https","dim");break;
+default:line("command not found: "+value+"  (type help)","warn");
+}if(sound)beep();window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})}
+function setTheme(name){const key=name.toLowerCase();if(!themes[key]){line("Unknown theme. Choose cyber, amber, matrix, or violet.","warn");return}const v=themes[key],root=document.documentElement;["--bg","--panel","--fg","--bright","--muted","--accent","--green","--line"].forEach((k,i)=>root.style.setProperty(k,v[i]));$("#themeSelect").value=key;line("Theme changed to "+key+".","success");if(key==="matrix")document.body.classList.add("matrix");else document.body.classList.remove("matrix")}
+function toggleMatrix(){if(matrixTimer){clearInterval(matrixTimer);matrixTimer=null;line("Matrix effect paused.","dim");return}line("Entering simulated Matrix mode. Run `matrix` again to stop.","success");let count=0;matrixTimer=setInterval(()=>{const chars="01アイウエオカキクケコ";line(Array.from({length:32},()=>chars[Math.floor(Math.random()*chars.length)]).join(""),"matrix");if(++count>=8){clearInterval(matrixTimer);matrixTimer=null;line("Matrix preview complete.","dim")}},150)}
+function downloadProfile(){const text=[PROFILE.name,PROFILE.tagline,"Location: "+PROFILE.location,"","PROJECTS",...PROFILE.projects.map(p=>p.name+" — "+p.desc),"","SKILLS",...PROFILE.skills.map(s=>s[0]),"","CONTACT",PROFILE.email,PROFILE.github,PROFILE.portfolio].join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type:"text/plain"}));a.download="jihan-profile.txt";a.click();URL.revokeObjectURL(a.href);line("Profile text file prepared for download.","success")}
+let audioCtx=null;function beep(){try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="square";o.frequency.value=660;g.gain.value=.018;o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.035)}catch(e){}}
+form.addEventListener("submit",e=>{e.preventDefault();const v=input.value;if(v.trim()){history.push(v.trim());historyIndex=history.length;run(v)}input.value=""});
+input.addEventListener("keydown",e=>{if(e.key==="ArrowUp"){e.preventDefault();if(historyIndex>0)input.value=history[--historyIndex]}else if(e.key==="ArrowDown"){e.preventDefault();if(historyIndex<history.length-1)input.value=history[++historyIndex];else{historyIndex=history.length;input.value=""}}else if(e.key==="Tab"){e.preventDefault();const names=["about","projects","skills","contact","services","certifications","help","clear","whoami","neofetch","ls","cat","date","uptime","history","echo","banner","theme","matrix","joke","download","sudo","exit","ping","scan","open"];const m=names.filter(x=>x.startsWith(input.value.toLowerCase()));if(m.length===1)input.value=m[0]}});
+document.querySelectorAll("[data-cmd]").forEach(b=>b.addEventListener("click",()=>{input.value=b.dataset.cmd;history.push(input.value);historyIndex=history.length;run(input.value);input.value="";input.focus()}));
+$("#themeSelect").addEventListener("change",e=>setTheme(e.target.value));
+$("#soundBtn").addEventListener("click",()=>{sound=!sound;$("#soundBtn").textContent="sound: "+(sound?"on":"off");if(sound)beep()});
+$("#glitchBtn").addEventListener("click",()=>{glitch=!glitch;$("#glitchBtn").textContent="glitch: "+(glitch?"on":"off");document.querySelector(".screen").style.transform=glitch?"translateX(1px) skewX(.15deg)":"";document.querySelector(".screen").style.filter=glitch?"drop-shadow(2px 0 var(--accent))":""});
+$("#downloadBtn").addEventListener("click",downloadProfile);
+async function bootSequence(){
+  const logo = document.createElement("pre");
+  logo.className = "ascii";
+  logo.setAttribute("aria-label", "Jihan OS boot logo");
+  logo.textContent =
+"     ██╗██╗██╗  ██╗ █████╗ ███╗   ██╗\n"+
+"     ██║██║██║  ██║██╔══██╗████╗  ██║\n"+
+"     ██║██║███████║███████║██╔██╗ ██║\n"+
+"██   ██║██║██╔══██║██╔══██║██║╚██╗██║\n"+
+"╚█████╔╝██║██║  ██║██║  ██║██║ ╚████║\n"+
+" ╚════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝\n"+
+"             [ J I H A N _ O S ]";
+  boot.appendChild(logo);
+  const msgs=[
+    {text:"JIHAN_OS BIOS v2.0.0",cls:"dim"},
+    {text:"Initializing retro interface...",cls:"dim"},
+    {text:"[ OK ] Loading profile module",cls:"success"},
+    {text:"[ OK ] Mounting virtual /projects directory",cls:"success"},
+    {text:"[ OK ] Enabling command interpreter",cls:"success"},
+    {text:"[ OK ] Loading interactive modules",cls:"success"},
+    {text:"SESSION READY. Welcome, visitor.",cls:"dim"}
+  ];
+  for(const msg of msgs){
+    const el=document.createElement("div");
+    el.className="line "+msg.cls;
+    el.textContent=msg.text;
+    boot.append(el);
+    await sleep(msg.text.startsWith("[ OK ]")?330:450);
+  }
+  await sleep(350);
+  // Keep the boot screen visible as a startup log, then switch to the terminal transcript.
+  boot.classList.add("hidden");
+  document.querySelector(".screen").classList.remove("booting");
+  input.disabled=false;
+  input.focus();
+  line("JIHAN_OS ready. Type `help` to explore the terminal.","dim");
+  help();
+}
+bootSequence();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
